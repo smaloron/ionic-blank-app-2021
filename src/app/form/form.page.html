@@ -8,7 +8,45 @@
 </ion-header>
 
 <ion-content>
+  <h2>Bonjour {{ person.firstName }} {{ person.name }}</h2>
+  <p>Vous avez {{ person.skills.length }} compétences</p>
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Nom :</ion-label>
+      <ion-input placeholder="votre nom" [(ngModel)]="person.name"></ion-input>
+    </ion-item>
 
-  <h2>{{ time }}</h2>
+    <ion-item>
+      <ion-label position="floating">Prénom :</ion-label>
+      <ion-input placeholder="votre prénom" [(ngModel)]="person.firstName"></ion-input>
+    </ion-item>
 
+    <ion-item>
+      <ion-label position="floating">Age :</ion-label>
+      <ion-input  type="number" placeholder="votre âge" 
+                  [(ngModel)]="person.age"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Profession</ion-label>
+      <ion-select [(ngModel)]="person.job">
+        <ion-select-option>Développeur</ion-select-option>
+        <ion-select-option>Chef de projet</ion-select-option>
+        <ion-select-option>Architecte logiciel</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Compétences</ion-label>
+      <ion-select multiple="true" [(ngModel)]="person.skills">
+        <ion-select-option>Java</ion-select-option>
+        <ion-select-option>PHP</ion-select-option>
+        <ion-select-option>Angular</ion-select-option>
+        <ion-select-option>SQL</ion-select-option>
+        <ion-select-option>Ionic</ion-select-option>
+        <ion-select-option>Python</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+  </ion-list>
 </ion-content>
